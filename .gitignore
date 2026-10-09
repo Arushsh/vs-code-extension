@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+webview-ui/node_modules/
+
+# Build outputs
+out/
+dist/
+webview-ui/dist/
+
+# Extension packages
+*.vsix
+
+# Logs and tests
+*.log
+.vsco
+
+# OS generated files
+.DS_Store
+Thumbs.db

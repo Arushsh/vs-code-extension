@@ -1,0 +1,71 @@
+{
+  "name": "codeatlas-architecture-explorer",
+  "displayName": "CodeAtlas Architecture Explorer",
+  "description": "Understand any codebase in minutes. Visualize project architecture, explore folders, and generate README — all inside VS Code.",
+  "version": "1.0.0",
+  "publisher": "ArushVishwakarma",
+  "license": "MIT",
+  "icon": "assets/icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "codebase",
+    "architecture",
+    "explorer",
+    "readme",
+    "documentation",
+    "analyzer"
+  ],
+  "activationEvents": [
+    "onCommand:codeAtlas.analyze"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codeAtlas.analyze",
+        "title": "CodeAtlas: Analyze Project",
+        "icon": "$(symbol-structure)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "codeAtlas.analyze",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build:webview && npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "build:webview": "cd webview-ui && npm run build",
+    "dev:webview": "cd webview-ui && npm run dev",
+    "package": "vsce package",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "eslint": "^8.56.0",
+    "@vscode/vsce": "^2.22.0"
+  },
+  "dependencies": {
+    "fast-glob": "^3.3.2",
+    "typescript": "^5.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arush-vishwakarma/codeatlas"
+  }
+}
